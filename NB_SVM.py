@@ -8,7 +8,6 @@ from sklearn.metrics import classification_report, confusion_matrix, roc_auc_sco
 import numpy as np
 
 X, y = load_breast_cancer(return_X_y=True)
-
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.25, random_state=42, stratify=y
 )
@@ -40,3 +39,4 @@ print("Best Params:", grid.best_params_)
 print(classification_report(y_test, svm_pred, digits=4))
 print("Confusion Matrix:\n", confusion_matrix(y_test, svm_pred))
 print("ROC AUC:", roc_auc_score(y_test, svm_proba))
+
